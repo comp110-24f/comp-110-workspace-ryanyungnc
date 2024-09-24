@@ -1,4 +1,5 @@
-"""Input the # of guests and recieved how many ingredients and the cost of a tea party!"""
+"""Input the # of guests and recieved how many ingredients
+ and the cost of a tea party!"""
 
 __author__: str = "730775886"
 
