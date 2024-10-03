@@ -30,11 +30,13 @@ def contains_char(word: str, letter: str) -> None:
     print("Searching for " + letter + " in " + word)  # notifies the user
     while loop_num < 5:  # loops 5 times
         if word[loop_num] == letter:  # checks if each letter is equal to letter input
-            print(letter + " found at index " + str(loop_num + 1))  # if so, prints it
+            print(letter + " found at index " + str(loop_num))  # if so, prints it
             count = count + 1  # adds 1 to the count if the letter appears in word
         loop_num = loop_num + 1  # progresses the loop
     if count == 0:  # checks if there is no letter match and reports it
         print("No instances of " + letter + " found in " + word)
+    elif count == 1:
+        print("1 instance of " + letter + " found in " + word)
     else:  # otherwise report how many letters match
         print(str(count) + " instances of " + letter + " found in " + word)
 
