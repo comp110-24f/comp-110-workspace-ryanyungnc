@@ -5,6 +5,8 @@ __author__ = "730775886"
 
 def all(nums: list[int], check: int) -> bool:
     """If all nums equal check return true, otherwise return false"""
+    if len(nums) == 0:
+        return False  # if no values in list, check cant be in list
     for num in nums:  # rotates through all values in the nums list
         if num != check:  # checks if num isnt the same
             return False  # ends the loop & returns false
@@ -15,7 +17,7 @@ def max(nums: list[int]) -> int:
     """Given a list of ints, returns the largest in the list"""
     if len(nums) == 0:  # returns error if inputted list is empty
         raise ValueError("max() arg is an empty List")
-    top: int = 0  # created variable to track the biggest num
+    top: int = nums[1]  # created variable to track the biggest num; initially 1st value
     for num in nums:  # rotates through all values in the nums list
         if num > top:
             top = num  # if num is bigger than current top replace it
