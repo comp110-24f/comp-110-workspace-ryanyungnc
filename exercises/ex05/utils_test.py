@@ -20,7 +20,7 @@ def test_only_evens_modify() -> None:
 
 def test_only_even_edge_case() -> None:
     """edge case - returns an empty list when an empty list is inputted"""
-    assert only_evens([]) == []
+    assert only_evens([]) == []  # should give back an empty list as no evens in empty
 
 
 def test_sub_value() -> None:
@@ -31,8 +31,8 @@ def test_sub_value() -> None:
 def test_sub_modify() -> None:
     """use case 2 - tests that the original list isnt modified when sub used"""
     x: list[int] = [1, 2, 3, 6, 5, 9, 4, 6]
-    sub(x, 2, 5)
-    assert x == [1, 2, 3, 6, 5, 9, 4, 6]
+    sub(x, 2, 5)  # using function before checking
+    assert x == [1, 2, 3, 6, 5, 9, 4, 6]  # x should be same as function makes new lists
 
 
 def test_sub_edge_case() -> None:
@@ -48,11 +48,13 @@ def test_add_at_index_value() -> None:
 def test_add_at_index_modify() -> None:
     """use case 2 - tests for expected modification of list after add_at_index"""
     x: list[int] = [1, 2, 3, 5, 9, 4, 6]
-    add_at_index(x, 6, 3)
-    assert x == [1, 2, 3, 6, 5, 9, 4, 6]
+    add_at_index(x, 6, 3)  # using function before checking
+    assert x == [1, 2, 3, 6, 5, 9, 4, 6]  # x should change bc function modifies lists
 
 
 def test_add_at_index_edge_case() -> None:
     """edge case - test that add_at_index raises an IndexError for invalid index"""
-    with pytest.raises(IndexError):
+    with pytest.raises(
+        IndexError
+    ):  # different syntax to check as we are checking for error
         add_at_index([1, 2, 3, 6], 5, 9)

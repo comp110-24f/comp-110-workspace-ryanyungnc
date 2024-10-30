@@ -23,7 +23,7 @@ def sub(input: list[int], start: int, end: int) -> list[int]:
 
 def add_at_index(input: list[int], add: int, place: int) -> None:
     """adds int to a given place in the input list"""
-    if place >= len(input):  # checks for edge case of not in list
+    if place > len(input) or place < 0:  # checks for edge case of not in list
         raise IndexError("Index is out of bounds for the input list")  # gives errors
     input.append(0)  # adds placeholder num to end of list
     for num in range(len(input) - 1, place, -1):
